@@ -1,17 +1,28 @@
 #!/bin/bash
+# File: gatherhostinfo.sh
+# Author: Michael Moscovitch
+# Assistant: Copilot
+# Date: 2025/10/29
+# (c) 2025 CiteNet Internet
+#
+# Description: Small script to help gather system information
+# without many dependencies
+#
 
 defaults() {
 
     sftpurl=""
     flg_publish=0
+
+    # Output file based on hostname
+    HOSTNAME=$(hostname)
+    OUTPUT_FILE="${HOSTNAME}-info.txt"
+    DATE=$(date '+%Y-%m-%d %H:%M:%S')
+
 }
 
 defaults
 
-# Output file based on hostname
-HOSTNAME=$(hostname)
-OUTPUT_FILE="${HOSTNAME}-info.txt"
-DATE=$(date '+%Y-%m-%d %H:%M:%S')
 
 echo "Collecting system information for $HOSTNAME..."
 echo "Output will be saved to $OUTPUT_FILE"
